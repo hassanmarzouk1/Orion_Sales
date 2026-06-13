@@ -1,0 +1,27 @@
+Here is a bullet-point summary of the steps to connect Power BI to a SQLite database:
+
+**1. Install the ODBC Driver**
+- Download the **64-bit SQLite ODBC driver** (from ch-werner.de)
+- Run the installer with default settings
+
+**2. Configure the ODBC Data Source**
+- Open **ODBC Data Sources (64-bit)** from Windows search
+- Go to the **System DSN** tab → click **Add**
+- Select **SQLite3 ODBC Driver** → click **Finish**
+- Enter a **Data Source Name** (e.g., `MyLocalDB`)
+- **Browse** and select your `.db` or `.sqlite` file
+- Click **OK**
+
+**3. Connect from Power BI Desktop**
+- Open **Power BI Desktop**
+- Click **Get Data** → select **ODBC** → click **Connect**
+- Choose your DSN from the dropdown (e.g., `MyLocalDB`)
+- Click **Connect** (use default credentials)
+- Select tables in the **Navigator** window
+- Click **Load**
+
+**Key Limitations:**
+- Power BI **imports** a copy of the data (not real-time without manual refresh)
+- For cloud refresh, you'll need the **On-premises data gateway**
+
+
